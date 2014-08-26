@@ -1,0 +1,63 @@
+<% i = 0 %>
+<%= form_tag "/dr_availabilities", html: {class: "form-horizontal"} do %>
+  <% 7.times do %>
+    <div class="row">  
+        <h2 align="center" class="m-t"><%= @days_of_the_week[i].upcase %></h2>
+        
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 text-right">
+              <label class="control-label">Clinic Open:</label> 
+            </div>
+            <div class="col-lg-4">
+              <%= text_field_tag "dr_availabilities[][clinic_open]","",class: "form-control"%>
+            </div>
+            <div class="col-lg-4 text-left">
+              (24-hrs)
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 text-right">
+              <label class="control-label">Clinic Close: </label>
+            </div>
+            <div class="col-lg-4">
+              <%= text_field_tag "dr_availabilities[][clinic_close]","",class: "form-control" %> 
+            </div>
+            <div class="col-lg-4">
+              (24-hrs)
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 text-right">        
+              <label class="control-label">Alotted appointment time: </label>
+            </div>
+            <div class="col-lg-4">
+              <%= text_field_tag "dr_availabilities[][avg_appt_time]","",class: "form-control" %> 
+            </div>
+            <div class="col-lg-4">
+              (mins)
+            </div>
+          </div>
+        </div>
+      
+      <% i+=1 %>
+
+    </div>
+  <% end %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4 center">
+        <%= submit_tag button_name, class: "btn btn-success" %>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+
+<% end %>

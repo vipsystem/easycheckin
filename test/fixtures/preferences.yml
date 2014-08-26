@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_time: 2014-08-25 13:19:11
+  date: 2014-08-25
+  patient_appointment_id: 
+
+two:
+  start_time: 2014-08-25 13:19:11
+  date: 2014-08-25
+  patient_appointment_id: 

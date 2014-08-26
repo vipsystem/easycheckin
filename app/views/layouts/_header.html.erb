@@ -1,0 +1,30 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <% if @current_user %>
+      <%= link_to raw("Easy<font color='blue'>Checkin</font>"), user_path(@current_user), id: "logo" %>
+    <% else %>
+      <%= link_to raw("Easy<font color='blue'>Checkin</font>"), root_path, id: "logo" %>
+    <% end %>
+    
+    <nav>
+      <br><ul class="list-inline pull-right">
+        <% if @current_user %>
+          <li><%= link_to "Home",user_path(@current_user)%></li> | 
+          <li><%= link_to "Help",    '#' %></li> | 
+          <li><%= link_to "Logout", logout_users_path %></li>
+
+        <% else %>
+          <li><%= link_to "Home",root_path%></li> | 
+          <li><%= link_to "Help",    '#' %></li> | 
+          
+          <% if current_page?(login_users_path) %>
+            <li><%= link_to "Sign up", new_user_path %></li>
+          <% else %>
+            <li><%= link_to "Login", login_users_path %></li>
+          <% end %>
+        
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

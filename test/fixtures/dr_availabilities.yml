@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  office_open: 2014-08-25 13:17:32
+  office_close: 2014-08-25 13:17:32
+  day: MyString
+  avg_appt_time: 1
+  physician: 
+  add_index: false
+
+two:
+  office_open: 2014-08-25 13:17:32
+  office_close: 2014-08-25 13:17:32
+  day: MyString
+  avg_appt_time: 1
+  physician: 
+  add_index: false

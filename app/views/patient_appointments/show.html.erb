@@ -1,0 +1,58 @@
+<h2>Thanks for booking an appointment with <%= @doctor.name %>. An email will follow with the details of your appointment booking.</h2>
+
+
+<div>
+  Your appointment is at: <%= @patient_appointment.start_time.strftime('%H:%M') %>
+</div>
+
+<div>
+  On <%= @patient_appointment.date.strftime('%A %B %-d, %Y') %>
+</div>
+
+
+<h4>Would you like to be notified if an earlier and more convenient appointment becomes available?</h4>
+
+<%= form_tag "/patient_appointments/#{@patient_appointment.id}/preferences", html: {class: "form-horizontal"} do %>
+  <% 3.times do %>
+    <div class="row">  
+        
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 text-right">
+              <label class="control-label">Start time: </label> 
+            </div>
+            <div class="col-lg-4">
+              <%= text_field_tag "preferences[][start_time]","",class: "form-control"%>
+            </div>
+            <div class="col-lg-4 text-left">
+              (24-hr clock)
+            </div>
+          </div>
+        </div>
+    
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg-4 text-right">
+              <label class="control-label">Date of preferred appt: (YYYY-MM-DD) </label>
+            </div>
+            <div class="col-lg-4">
+              <%= text_field_tag "preferences[][date]","",class: "form-control" %> 
+              <%= hidden_field_tag "preferences[][patient_appointment_id]", @patient_appointment.id %>
+            </div>
+            <div class="col-lg-4">
+            </div>
+          </div>
+        </div>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4 center">
+        <%= submit_tag "Submit", class: "btn btn-success" %>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+
+<% end %>

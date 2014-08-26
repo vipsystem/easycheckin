@@ -1,0 +1,16 @@
+<%= form_for person, url: desired_url do |f| %>
+
+      <div class="form-group">
+        <%= f.label :email, class: "control-label"%>
+        <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: 'Email' %>
+
+        <%= f.label :password, class: "control-label" %>
+        <%= f.password_field :password, class: "form-control", autofocus: true, placeholder: 'Password' %>
+      </div>
+
+      <div>  
+        <%= f.submit "Login", class: "btn btn-success"%>
+      </div>
+    </div>
+
+  <% end %>

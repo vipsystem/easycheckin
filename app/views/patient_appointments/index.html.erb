@@ -1,0 +1,47 @@
+<h2 class="fc-header-title">Patient Bookings for <%=@current_user.name%></h2>
+
+<div>
+  <ul class="nav nav-tabs">
+    <li class="active"><%= link_to "Today" %></li>
+    <li><%= link_to "Week" %></li>
+    <li><%= link_to "Month" %></li>
+    <li><%= link_to "All Appointments"%></li>
+  </ul>
+</div>
+
+<div>
+  <table class="table">
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Time</th>
+        <% if @current_user.type=="Patient" %>
+          <th>Doctor</th>
+        <% elsif @current_user.type=="Doctor" %>
+          <th>Booked By</th>
+        <% end %>
+
+      </tr>
+      <% c = 1 %>
+      <% @patient_appointments.each do |appointment| %>
+      
+        <tr id="<%= appointment.id %>">  
+          <% if appointment.appointment_booked %>  
+            <td><%= c %> </td>
+            <td><%= appointment.date.strftime('%A %B %-d, %Y') %></td>
+            
+            <td><%= appointment.start_time.strftime('%H:%M') %></td>
+              
+            <% if @current_user.type=="Patient"%>
+
+              <td><%= find_respective_doctor(appointment).name %></td>
+            <% elsif @current_user.type=="Doctor" %>
+              <td><%= User.find(appointment.user_id).name %></td>
+            <% end %>
+            <td><%= link_to "Cancel Appointment", appointment, method: :delete, remote: true, data: {confirm: "Are you sure you want to cancel this appointment?" },class: "btn btn-danger btn-xs" %></td>
+            <% c+=1 %>
+          <% end %>
+        </tr>
+      <% end %>
+    </table>
+</div>

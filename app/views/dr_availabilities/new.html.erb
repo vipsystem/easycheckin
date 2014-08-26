@@ -1,0 +1,7 @@
+<div class="row">
+  <h1>Welcome <%= @current_user.name %>!</h1>
+  <h4 align="center">Please Take a Few Minutes to Setup Your Online Clinic</h4>
+  <h5 align="center"><em>Please Use a 24-Hour Clock</em></h1>
+</div>
+
+  <%= render partial: 'dr_availabilities_form', locals: { button_name: "Submit" } %>

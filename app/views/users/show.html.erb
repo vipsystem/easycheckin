@@ -1,0 +1,15 @@
+<!-- links to show if user is a doctor and has previously made a schedule -->
+<h2>Your Profile Information</h2>
+<div align="center">
+  <address>
+    <h4><%= @current_user.name %></h4>
+    <%= @current_user.address %><br>
+    <%= @current_user.city%>, <%= @current_user.state %><br>
+    <%= @current_user.zip_code %><br>
+    <abbr title="Phone">P: </abbr><%= @current_user.phone_number %>
+  </address>
+  <%=link_to "Edit Profile", edit_user_path(@current_user), class: "btn btn-success btn-xs"%>
+  <% if @current_user.type=="Doctor" %>
+    <%= link_to "Edit Online Clinic", "#", class: "btn btn-success btn-xs" %>
+  <% end %>
+</div>
