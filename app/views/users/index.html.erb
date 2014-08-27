@@ -1,5 +1,5 @@
 <h2><strong>Step 1:</strong> Choose a Doctor to view their availability</h2>
-
+<div id='calendar'></div>
 <% @doctors.each do |doctor| %>
   <h2>
     <%= link_to "#{doctor.name}", dr_availabilities_path(doctor_id: doctor.id) %>

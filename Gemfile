@@ -42,7 +42,8 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
+gem 'rails_12factor'
+
+gem 'fullcalendar-rails'
+gem 'gdata'
+gem 'oauth'
