@@ -8,11 +8,15 @@
   <%= csrf_meta_tags %>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.min.js'></script>
   <link rel="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/1.6.4/fullcalendar.css">
+  <script type='text/javascript' src='fullcalendar/gcal.js'></script>
   <%= javascript_tag do %>
-$(document).ready(function() {
-$('#calendar').fullCalendar()
-});
-<% end %>
+    $(document).ready(function() {
+    $('#calendar').fullCalendar({
+        events: 'http://www.google.com/calendar/feeds/vplcpmvlggn9njc4jh2hseqs58%40group.calendar.google.com/public/basic/'
+      });
+    });
+  <% end %>
+</script>
 </head>
 <body>
   <%= render 'layouts/header' %>

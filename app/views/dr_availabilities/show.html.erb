@@ -1,6 +1,11 @@
 <div class="row">
 <h2><%=@current_date.to_date.strftime("%A, %B %e, %Y") %></h2>
 <div id="day_calendar">
+      <style type="text/css">
+      body {
+        margin: 50px;
+      }
+      </style>
   <% if @appointment_times == nil %>
     <h2>No appointments available for this day</h2>
   <% else %>
