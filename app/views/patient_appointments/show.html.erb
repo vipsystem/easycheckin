@@ -1,5 +1,9 @@
+      <style type="text/css">
+      body {
+        margin: 50px;
+      }
+      </style>
 <h2>Thanks for booking an appointment with <%= @doctor.name %>. An email will follow with the details of your appointment booking.</h2>
-
 
 <div>
   Your appointment is at: <%= @patient_appointment.start_time.strftime('%H:%M') %>

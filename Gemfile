@@ -35,7 +35,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
 # gem 'unicorn'
-gem 'appointments'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'sprockets-rails', :require => 'sprockets/railtie'
@@ -45,5 +44,7 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'rails_12factor'
 
 gem 'fullcalendar-rails'
-gem 'gdata'
+
 gem 'oauth'
+
+gem 'cucumber-json-api-steps'

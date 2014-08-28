@@ -1,6 +1,15 @@
 <div class="col-md-6 col-md-offset-3">
-
-  <h1>Create An Account</h1>
+		    <style type="text/css">
+    			body {
+    			  padding-top: 60px;
+    			  background: url(/assets/hospital-background.jpg)no-repeat center center fixed;
+    			  -webkit-background-size: cover;
+    			  -moz-background-size: cover;
+    			  -o-background-size: cover;
+    			  background-size: cover;
+  			}
+      	</style>
+  <h1 class="caa">Create An Account</h1>
 
   <%= render partial: 'shared/form', locals: { person: User.new, button_name: "Create a New Account", path: users_path } %>
 </div>

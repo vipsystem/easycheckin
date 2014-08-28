@@ -1,3 +1,8 @@
+		<style type="text/css">
+			body {
+			  margin: 70px;
+			}
+    	</style>
 <h3 align="center">Please edit your information:</h3>
 
 <%= render partial: 'shared/form', locals: { person: User.find(params[:id]), button_name: "Save Changes", path: edit_user_path(params[:id]) } %>
