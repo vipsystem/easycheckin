@@ -27,9 +27,9 @@ group :doc do
 gem 'sdoc', require: false
 end
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-group :development do
-gem 'spring'        
-end
+# group :development do
+gem 'spring'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -45,5 +45,5 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'rails_12factor'
 
 gem 'fullcalendar-rails'
-gem 'gdata'
+gem 'gdata', git: 'https://github.com/agentrock/gdata.git'
 gem 'oauth'
